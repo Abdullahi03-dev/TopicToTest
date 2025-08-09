@@ -87,7 +87,7 @@ export default function AuthPage() {
       });
 
 
-if(loginResult&&loginResult.ok){
+if(loginResult){
         router.push('/dashboard')
 }
       
