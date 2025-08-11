@@ -1,5 +1,7 @@
-"use client"
 
+// export const dynamic="force-dynamic";
+// export const fetchCache="force-no-store";
+"use client"
 import type React from "react"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -17,7 +19,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 
 export default function AuthPage() {
   const {status} =useSession()
-  const params=useSearchParams()
+  // const params=useSearchParams()
   const [signUpLoading, setSignUpLoading] = useState(false)
   const [signInLoading, setSignInLoading] = useState(false)
   const [signupForm,setSignupForm]=useState({name:'',email:'',password:''})
