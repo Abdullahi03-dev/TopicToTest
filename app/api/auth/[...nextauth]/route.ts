@@ -6,7 +6,7 @@ import { prisma } from "@/lib/prisma"
 import { compare } from "bcrypt"
 
 const handler = NextAuth({
-  secret: process.env.NEXTAUTH_SECRET, // ✅ Added for session encryption
+  secret: process.env.NEXTAUTH_SECRET, //  Added for session encryption
   providers: [
     // Google Sign-In
     GoogleProvider({
@@ -34,7 +34,7 @@ const handler = NextAuth({
         if (!isValid) return null
 
         return {
-          id: String(user.id), // ✅ Ensure ID is string
+          id: String(user.id), //  Ensure ID is string
           name: user.name,
           email: user.email,
         }

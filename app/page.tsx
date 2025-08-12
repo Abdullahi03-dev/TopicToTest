@@ -37,7 +37,7 @@ export default function LandingPage() {
             <Zap className="w-4 h-4" />
             AI-Powered Question Generation
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-purple-600">
             Master Your Exams with Smart Question Generation
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">

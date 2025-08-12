@@ -39,7 +39,7 @@ export default function AuthPage() {
   },[status,router])
   const handleGoogleSignup=()=>{
     setGoogleLoader(true)
-    signIn("google",{callbackUrl:'/google-login'})
+    signIn("google",{callbackUrl:'/auth'})
   }
 
 
