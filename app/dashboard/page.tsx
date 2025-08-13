@@ -1,5 +1,6 @@
 "use client"
-
+import { jsPDF } from "jspdf";
+import autoTable from "jspdf-autotable";
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { useSession,signOut } from "next-auth/react"
@@ -85,6 +86,26 @@ if(currentTopic!==''){
     await signOut({redirect:false})
     toast.success('You Have Been Logged Out')
   }
+
+
+
+  const handleDownloadPdf = () => {
+    if (generatedQuestions.length === 0) {
+      toast.error('No Available Question')
+      return;
+    }
+  
+    const doc = new jsPDF();
+    doc.text("Questions Report", 14, 10);
+  
+    autoTable(doc, {
+      head: [["ID", "Topic", "Type", "Difficulty", "Question Name"]],
+      body: generatedQuestions.map((q) => [q.id,q.type, q.difficulty, q.question]),
+      startY: 20
+    });
+  
+    doc.save("questions.pdf");
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -267,7 +288,7 @@ if(currentTopic!==''){
                           </div>
                         </div>
                         <p className="font-medium text-gray-900 mb-3">{question.question}</p>
-                        {question.options && (
+                        {/* {question.options && (
                           <div className="space-y-1">
                             {question.options.map((option: string, optIndex: number) => (
                               <div key={optIndex} className="text-sm text-gray-600 pl-4">
@@ -275,18 +296,15 @@ if(currentTopic!==''){
                               </div>
                             ))}
                           </div>
-                        )}
+                        )} */}
                       </div>
                     ))}
 
-                    {/* <div className="flex gap-3 pt-4">
-                      <Button variant="outline" className="flex-1 bg-transparent">
-                        Export Questions
+                    <div className="flex gap-3 pt-4">
+                      <Button variant="outline" className="flex-1 bg-transparent" onClick={handleDownloadPdf}>
+                        Save Questions
                       </Button>
-                      <Button variant="outline" className="flex-1 bg-transparent">
-                        Save for Later
-                      </Button>
-                    </div> */}
+                    </div>
                   </div>
                 )}
               </CardContent>
