@@ -1,144 +1,181 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { BookOpen, Brain, GraduationCap, Zap } from "lucide-react"
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-sm">
+        <div className="container mx-auto flex items-center justify-between px-4 py-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
-              <Brain className="w-5 h-5 text-white" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-600">
+              <Brain className="h-5 w-5 text-white" />
             </div>
             <span className="text-xl font-bold text-purple-900">
-            TopicToTest
+              TopicToTest
             </span>
           </div>
+
           <div className="flex items-center gap-4">
             <Link href="/auth">
-              <Button variant="ghost">Sign In</Button>
+              <Button variant="ghost">Sign in</Button>
             </Link>
             <Link href="/auth">
-              <Button className="bg-purple-600 hover:to-purple-700">
-                Get Started
+              <Button className="bg-purple-600 hover:bg-purple-700">
+                Get started
               </Button>
             </Link>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Zap className="w-4 h-4" />
-            AI-Powered Question Generation
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700">
+            <Zap className="h-4 w-4" />
+            AI-powered question generation
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-purple-600">
-            Master Your Exams with Smart Question Generation
+
+          <h1 className="mb-6 text-5xl font-bold text-purple-600 md:text-6xl">
+            Turn Any Topic Into Exam-Ready Questions
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Transform your study topics into comprehensive practice questions. Get personalized exam preparation
-            tailored to your specific subjects and exam types.
+
+          <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-600">
+            Drop in your study topics and instantly get practice questions that
+            actually match your syllabus. Simple, fast, and built for real exam prep.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="/auth">
               <Button
                 size="lg"
-                className="bg-purple-600 hover:to-purple-700 px-8"
+                className="bg-purple-600 px-8 hover:bg-purple-700"
               >
-                Start Generating Questions
+                Start generating questions
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="px-8 bg-transparent">
-              Watch Demo
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent px-8"
+            >
+              Watch demo
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features */}
       <section className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Students Love ExamGenius</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Our AI-powered platform helps you prepare smarter, not harder, with personalized question generation.
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+            Why students actually use this
+          </h2>
+          <p className="mx-auto max-w-2xl text-gray-600">
+            TopicToTest helps you practice smarter by creating questions that focus
+            on what really matters for your exams.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader className="text-center pb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="w-6 h-6 text-blue-600" />
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+          <Card className="border-0 shadow-lg transition-shadow hover:shadow-xl">
+            <CardHeader className="pb-4 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
+                <BookOpen className="h-6 w-6 text-blue-600" />
               </div>
-              <CardTitle className="text-xl">Topic-Based Generation</CardTitle>
+              <CardTitle className="text-xl">
+                Topic-focused questions
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <CardDescription className="text-base">
-                Simply input your study topics and get relevant questions instantly. Perfect for any subject or course.
+                Enter exactly what you’re studying and get questions that stay
+                on topic—no filler, no randomness.
               </CardDescription>
             </CardContent>
           </Card>
 
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader className="text-center pb-4">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <GraduationCap className="w-6 h-6 text-purple-600" />
+          <Card className="border-0 shadow-lg transition-shadow hover:shadow-xl">
+            <CardHeader className="pb-4 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-100">
+                <GraduationCap className="h-6 w-6 text-purple-600" />
               </div>
-              <CardTitle className="text-xl">Multiple Exam Types</CardTitle>
+              <CardTitle className="text-xl">
+                Different exam formats
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <CardDescription className="text-base">
-                Support for various exam formats including multiple choice, essays, short answers, and more.
+                Practice MCQs, short answers, or longer questions—whatever your
+                exam style demands.
               </CardDescription>
             </CardContent>
           </Card>
 
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader className="text-center pb-4">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Brain className="w-6 h-6 text-green-600" />
+          <Card className="border-0 shadow-lg transition-shadow hover:shadow-xl">
+            <CardHeader className="pb-4 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-100">
+                <Brain className="h-6 w-6 text-green-600" />
               </div>
-              <CardTitle className="text-xl">Smart AI Analysis</CardTitle>
+              <CardTitle className="text-xl">
+                Smarter question quality
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <CardDescription className="text-base">
-                Our AI understands your topics and generates questions that test key concepts and critical thinking.
+                The AI focuses on key ideas and understanding—not just surface-level
+                recall.
               </CardDescription>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="bg-purple-600 py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Ace Your Next Exam?</h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Join thousands of students who are already using ExamGenius to improve their exam performance.
+          <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+            Ready to study with better questions?
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-blue-100">
+            Join students who are already using TopicToTest to feel more confident
+            going into exams.
           </p>
+
           <Link href="/auth">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8">
-              Get Started for Free
+            <Button
+              size="lg"
+              className="bg-white px-8 text-blue-600 hover:bg-gray-100"
+            >
+              Get started for free
             </Button>
           </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 py-12 text-white">
         <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <Brain className="w-5 h-5 text-white" />
+          <div className="mb-4 flex items-center justify-center gap-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600">
+              <Brain className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-bold">ExamGenius</span>
+            <span className="text-xl font-bold">TopicToTest</span>
           </div>
-          <p className="text-gray-400">© 2024 ExamGenius. Empowering students worldwide.</p>
+
+          <p className="text-gray-400">
+            © 2024 TopicToTest. Built to make studying less painful.
+          </p>
         </div>
       </footer>
     </div>
